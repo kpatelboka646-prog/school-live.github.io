@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS School Balotra - Educating Future Leaders</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* New Sections Styles */
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background-color: var(--primary-white);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: var(--light-black);
+            font-weight: 500;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+        }
+        
+        .principal-photo {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .principal-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-black);
+        }
+        
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--light-black);
+            margin-bottom: 25px;
+        }
+        
+        .principal-name {
+            font-weight: 600;
+            color: var(--accent-red);
+            margin-top: 20px;
+        }
+        
+        /* Academics Section */
+        .academics-section {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-black);
+        }
+        
+        .academics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .academic-card {
+            background-color: var(--primary-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .academic-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .academic-icon {
+            font-size: 40px;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+        }
+        
+        .academic-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-black);
+        }
+        
+        .academic-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--light-black);
+            margin-bottom: 20px;
+        }
+        
+        /* Campus Life Section */
+        .campus-section {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .campus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .campus-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .campus-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .campus-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .campus-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 20px 15px 15px;
+            font-weight: 600;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Awards Section */
+        .awards-section {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .awards-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .award-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .award-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .award-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-black);
+        }
+        
+        .award-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--light-black);
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+            background-color: var(--primary-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+        }
+        
+        .testimonial-content {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--light-black);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary-black);
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: var(--light-black);
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--accent-red);
+        }
+        
+        /* Admissions Section */
+        .admissions-section {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .admissions-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .admissions-content {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--light-black);
+            margin-bottom: 30px;
+        }
+        
+        .admissions-highlight {
+            background: linear-gradient(135deg, #a41034 0%, #8a0d2a 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .admissions-highlight h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        /* News Section */
+        .news-section {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+        }
+        
+        .news-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .news-content {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--light-black);
+            margin-bottom: 30px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .contact-details h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary-black);
+        }
+        
+        .contact-details p {
+            font-size: 16px;
+            color: var(--light-black);
+            line-height: 1.6;
+        }
+        
+        /* Footer Section */
+        .footer {
+            background-color: var(--primary-black);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-container {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .footer-logo-text .line1,
+        .footer-logo-text .line2,
+        .footer-logo-text .line3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-about {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent-red);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 15px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .accreditation {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .accreditation img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .accreditation p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Common Button Styles */
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: transparent;
+            color: var(--accent-red);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-red);
+        }
+        
+        .section-btn:hover {
+            background-color: var(--accent-red);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-center {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="logo.png" alt="SNS School Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="line1">SNS</span>
+                    <span class="line2">School</span>
+                    <span class="line3">Balotra</span>
+                </div>
+            </div>
+            <div class="header-icons">
+                <button class="notification-btn" id="notificationBtn" aria-label="Notifications">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">
+                We <span class="underline-link" data-slide="0">educate leaders</span> who make<br>
+                <span class="underline-link" data-slide="1">a difference</span> in<br>
+                <span class="underline-link" data-slide="2">the world.</span>
+            </h1>
+
+            <!-- Image Slider -->
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=500&fit=crop" alt="Students collaborating">
+                        </div>
+                        <div class="slide-content">
+                            <h3>Building Tomorrow's Leaders</h3>
+                            <p>Our comprehensive education programs empower students with critical thinking, leadership skills, and innovative mindsets to excel in a rapidly changing world.</p>
+                            <a href="article1.html" class="read-more-btn">
+                                Read more <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop" alt="Global impact">
+                        </div>
+                        <div class="slide-content">
+                            <h3>Making a Global Impact</h3>
+                            <p>Through community engagement, social initiatives, and real-world projects, our students learn to create meaningful change and contribute positively to society.</p>
+                            <a href="article2.html" class="read-more-btn">
+                                Read more <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&h=500&fit=crop" alt="World class education">
+                        </div>
+                        <div class="slide-content">
+                            <h3>World-Class Excellence</h3>
+                            <p>With state-of-the-art facilities, experienced faculty, and international collaborations, we provide an educational experience that prepares students for global citizenship.</p>
+                            <a href="article3.html" class="read-more-btn">
+                                Read more <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="nav-arrow prev-arrow" id="prevBtn" aria-label="Previous slide">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="nav-arrow next-arrow" id="nextBtn" aria-label="Next slide">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">2000+</div>
+                <div class="stat-label">Students Enrolled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Academic Success</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Expert Faculty</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">25</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="principal-photo">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=500&fit=crop" alt="Principal of SNS School">
+            </div>
+            <div class="about-content">
+                <h2>About SNS School Balotra</h2>
+                <p>Founded in 1999, SNS School Balotra has been at the forefront of providing quality education that blends traditional values with modern teaching methodologies. Our institution is built on the pillars of academic excellence, character building, and holistic development.</p>
+                <p>We believe in nurturing each child's unique potential, fostering curiosity, and instilling a lifelong love for learning. Our dedicated faculty and state-of-the-art infrastructure create an environment where students can thrive academically, socially, and emotionally.</p>
+                <div class="principal-message">
+                    <p>"At SNS School, we are committed to shaping future leaders who will make a positive impact on society. Our student-centric approach ensures that every child receives the attention and guidance they need to excel."</p>
+                    <p class="principal-name">- Dr. Rajesh Sharma, Principal</p>
+                </div>
+                <a href="about.html" class="section-btn">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section class="academics-section">
+        <h2 class="section-title">Our Academic Programs</h2>
+        <div class="academics-grid">
+            <div class="academic-card">
+                <div class="academic-icon">📚</div>
+                <h3>Primary Education</h3>
+                <p>Foundational learning with a focus on literacy, numeracy, and holistic development for young minds.</p>
+            </div>
+            <div class="academic-card">
+                <div class="academic-icon">🔬</div>
+                <h3>Secondary Education</h3>
+                <p>Comprehensive curriculum with science, mathematics, languages, and social sciences.</p>
+            </div>
+            <div class="academic-card">
+                <div class="academic-icon">🎓</div>
+                <h3>Senior Secondary</h3>
+                <p>Specialized streams in Science, Commerce, and Humanities with career-focused guidance.</p>
+            </div>
+            <div class="academic-card">
+                <div class="academic-icon">💡</div>
+                <h3>Co-curricular Activities</h3>
+                <p>Sports, arts, music, and clubs to ensure all-round personality development.</p>
+            </div>
+        </div>
+        <div class="btn-center">
+            <a href="programs.html" class="section-btn">Explore All Programs</a>
+        </div>
+    </section>
+
+    <!-- Campus Life Section -->
+    <section class="campus-section">
+        <h2 class="section-title">Campus Life</h2>
+        <div class="campus-grid">
+            <div class="campus-item">
+                <img src="https://images.unsplash.com/photo-1588072432836-4b4f2ca7ee08?w=400&h=300&fit=crop" alt="Modern Classroom">
+                <div class="campus-label">Modern Classrooms</div>
+            </div>
+            <div class="campus-item">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop" alt="Smart Labs">
+                <div class="campus-label">Smart Labs</div>
+            </div>
+            <div class="campus-item">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Sports Complex">
+                <div class="campus-label">Sports Complex</div>
+            </div>
+            <div class="campus-item">
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=300&fit=crop" alt="Library">
+                <div class="campus-label">Library</div>
+            </div>
+            <div class="campus-item">
+                <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=300&fit=crop" alt="Arts & Music">
+                <div class="campus-label">Arts & Music</div>
+            </div>
+            <div class="campus-item">
+                <img src="https://images.unsplash.com/photo-1555854879-b4b8c1200a6c?w=400&h=300&fit=crop" alt="Boarding Life">
+                <div class="campus-label">Boarding Life</div>
+            </div>
+        </div>
+        <div class="btn-center">
+            <a href="campus-life.html" class="section-btn">Explore Campus Life</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title">School Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=300&h=200&fit=crop" alt="School Event">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=300&h=200&fit=crop" alt="Classroom Activity">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop" alt="Sports Day">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?w=300&h=200&fit=crop" alt="Annual Function">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=200&fit=crop" alt="Science Exhibition">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1462536943532-57a629f6cc60?w=300&h=200&fit=crop" alt="Art Competition">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?w=300&h=200&fit=crop" alt="Cultural Event">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=300&h=200&fit=crop" alt="Field Trip">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=300&h=200&fit=crop" alt="Award Ceremony">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=300&h=200&fit=crop" alt="Graduation Day">
+            </div>
+        </div>
+        <div class="btn-center">
+            <a href="gallery.html" class="section-btn">View Full Gallery</a>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section">
+        <h2 class="section-title">Awards & Recognition</h2>
+        <div class="awards-container">
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-content">
+                        <h3>Best School Award 2023</h3>
+                        <p>Recognized as the Best School in Rajasthan for academic excellence and holistic development.</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">⭐</div>
+                    <div class="award-content">
+                        <h3>Green School Certification</h3>
+                        <p>Awarded for our sustainable practices and environmental education initiatives.</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🎯</div>
+                    <div class="award-content">
+                        <h3>Sports Excellence Award</h3>
+                        <p>Recognized for outstanding performance in inter-school sports competitions.</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">📈</div>
+                    <div class="award-content">
+                        <h3>100% Board Results</h3>
+                        <p>Consistently achieving 100% pass percentage in CBSE board examinations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-center">
+                <a href="awards.html" class="section-btn">View All Awards</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2 class="section-title">What People Say About Us</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial-slide active">
+                <div class="testimonial-content">
+                    "SNS School has provided an excellent environment for my child's growth. The teachers are dedicated, and the curriculum is well-balanced between academics and extracurricular activities."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" alt="Parent">
+                    </div>
+                    <div class="author-info">
+                        <h4>Mrs. Priya Mehta</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-content">
+                    "The facilities and teaching methods at SNS School are exceptional. I've grown not just academically but also as a confident individual ready to face future challenges."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Student">
+                    </div>
+                    <div class="author-info">
+                        <h4>Rahul Verma</h4>
+                        <p>Class XII Student</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-content">
+                    "My years at SNS School laid a strong foundation for my career. The values and knowledge imparted here have been instrumental in my professional success."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Alumni">
+                    </div>
+                    <div class="author-info">
+                        <h4>Dr. Anjali Singh</h4>
+                        <p>Alumni, Class of 2010</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <div class="testimonial-dot active" data-slide="0"></div>
+                <div class="testimonial-dot" data-slide="1"></div>
+                <div class="testimonial-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section class="admissions-section">
+        <div class="admissions-container">
+            <h2 class="section-title">Admissions Open for 2025-26</h2>
+            <p class="admissions-content">We are now accepting applications for the academic year 2025-26. Limited seats available for classes Nursery to XII.</p>
+            
+            <div class="admissions-highlight">
+                <h3>Early Bird Discount Available!</h3>
+                <p>Apply before October 31, 2025 to avail special early bird discount on admission fees.</p>
+            </div>
+            
+            <div class="admissions-process">
+                <h3>Admission Process</h3>
+                <p>1. Submit Application Form<br>
+                2. Entrance Assessment (for Classes I and above)<br>
+                3. Interaction with Principal<br>
+                4. Admission Confirmation & Fee Payment</p>
+            </div>
+            
+            <div class="btn-center">
+                <a href="admissions.html" class="section-btn">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events Section -->
+    <section class="news-section">
+        <div class="news-container">
+            <h2 class="section-title">News & Events</h2>
+            <p class="news-content">Stay updated with the latest happenings at SNS School Balotra. From academic achievements to cultural events, we keep you informed about everything happening in our school community.</p>
+            <div class="btn-center">
+                <a href="https://ibbchoudhary.blogspot.com" target="_blank" class="section-btn">Visit Our Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.991328061987!2d72.24018931503264!3d25.843159983572256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39412f5c7c93e5c5%3A0x5e3e1b4a3c3c3c3c!2sBalotra%2C%20Rajasthan%2C%20India!5e0!3m2!1sen!2sin!4v1647851234567!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Address</h3>
+                        <p>SNS School Balotra<br>Education City, Jodhpur Road<br>Balotra, Rajasthan 344022</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>+91 6377663613<br>+91 2912-254367</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>info@snsschool.edu.in<br>admissions@snsschool.edu.in</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Saturday: 8:00 AM - 4:00 PM<br>Office Hours: 9:00 AM - 3:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="SNS School Logo">
+                    <div class="footer-logo-text">
+                        <span class="line1">SNS</span>
+                        <span class="line2">School</span>
+                        <span class="line3">Balotra</span>
+                    </div>
+                </div>
+                <p class="footer-about">SNS School Balotra is committed to providing quality education that empowers students to become responsible global citizens and future leaders.</p>
+                <div class="footer-social">
+                    <a href="https://youtube.com/@snsschoolbalotra" target="_blank" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://instagram.com/snsschoolbalotra" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/snsschoolbalotra" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/916377663613" target="_blank" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="accreditation">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/CBSE_Logo.svg/1200px-CBSE_Logo.svg.png" alt="CBSE Logo">
+                    <p>Affiliated to Central Board of Secondary Education, New Delhi</p>
+                </div>
+            </div>
+            
+            <div class="footer-links-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Academic Programs</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="campus-life.html">Campus Life</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="https://ibbchoudhary.blogspot.com" target="_blank">News & Blog</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links-column">
+                <h3 class="footer-heading">Important Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">School Policies</a></li>
+                    <li><a href="#">Career Opportunities</a></li>
+                    <li><a href="#">Parent Portal</a></li>
+                    <li><a href="#">Student Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SNS School Balotra. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <!-- Close Button (Cross) -->
+        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close Menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="campus-life.html">Campus Life</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://ibbchoudhary.blogspot.com" target="_blank">Blog</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+            </ul>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://youtube.com/@snsschoolbalotra" target="_blank" class="social-link youtube" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://instagram.com/snsschoolbalotra" target="_blank" class="social-link instagram" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/snsschoolbalotra" target="_blank" class="social-link facebook" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/916377663613" target="_blank" class="social-link whatsapp" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Testimonials Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonialSlides.forEach(slide => slide.classList.remove('active'));
+                testimonialDots.forEach(dot => dot.classList.remove('active'));
+                
+                if (index >= testimonialSlides.length) {
+                    currentTestimonial = 0;
+                } else if (index < 0) {
+                    currentTestimonial = testimonialSlides.length - 1;
+                } else {
+                    currentTestimonial = index;
+                }
+                
+                testimonialSlides[currentTestimonial].classList.add('active');
+                testimonialDots[currentTestimonial].classList.add('active');
+            }
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                showTestimonial(currentTestimonial + 1);
+            }, 5000);
+            
+            // Dot navigation
+            testimonialDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showTestimonial(index);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

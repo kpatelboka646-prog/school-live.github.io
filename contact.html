@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SNS School Balotra</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background-color: var(--primary-white);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #a41034 0%, #8a0d2a 100%);
+            border-radius: 16px;
+            color: var(--primary-white);
+        }
+
+        .page-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary-white) 0%, #f8f8f8 100%);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-red) 0%, #8a0d2a 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-red);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(164, 16, 52, 0.15);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-red) 0%, #8a0d2a 100%);
+            color: var(--primary-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: rotateY(360deg);
+        }
+
+        .contact-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-black);
+        }
+
+        .contact-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--light-black);
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-black);
+            transform: translateX(3px);
+        }
+
+        .office-hours {
+            background: linear-gradient(135deg, var(--accent-red) 0%, #8a0d2a 100%);
+            color: var(--primary-white);
+            padding: 45px 35px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 60px;
+            box-shadow: 0 8px 24px rgba(164, 16, 52, 0.25);
+        }
+
+        .office-hours h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .office-hours-subtitle {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .hours-item {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .hours-item:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .hours-item strong {
+            display: block;
+            font-size: 17px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .hours-item span {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .contact-form-section {
+            background: linear-gradient(135deg, #f8f8f8 0%, var(--primary-white) 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 60px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--primary-black);
+            letter-spacing: -0.5px;
+        }
+
+        .form-subtitle {
+            font-size: 16px;
+            color: var(--light-black);
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-black);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 18px;
+            font-size: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background-color: var(--primary-white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 4px rgba(164, 16, 52, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--accent-red) 0%, #8a0d2a 100%);
+            color: var(--primary-white);
+            font-size: 17px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 4px 16px rgba(164, 16, 52, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(164, 16, 52, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .map-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary-black);
+            letter-spacing: -0.5px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--light-black);
+            padding: 40px;
+        }
+
+        .map-placeholder i {
+            font-size: 70px;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--primary-black);
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-red) 0%, #8a0d2a 100%);
+            color: var(--primary-white);
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(164, 16, 52, 0.3);
+        }
+
+        .map-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(164, 16, 52, 0.4);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            padding: 12px 20px;
+            border: 2px solid var(--accent-red);
+            border-radius: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-red);
+            color: var(--primary-white);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .contact-form-section {
+                padding: 35px 25px;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="logo.png" alt="SNS School Logo" class="logo-img">
+                </a>
+                <div class="logo-text">
+                    <span class="line1">SNS</span>
+                    <span class="line2">School</span>
+                    <span class="line3">Balotra</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="page-hero">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Reach out to us for admissions, inquiries, or feedback.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>Mon-Sat: 9:00 AM - 5:00 PM</p>
+                <p><a href="tel:+916377663613">+91 6377663613</a></p>
+                <p><a href="tel:+919876543210">+91 9876543210</a></p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>We'll respond within 24 hours</p>
+                <p><a href="mailto:info@snsschool.edu.in">info@snsschool.edu.in</a></p>
+                <p><a href="mailto:admissions@snsschool.edu.in">admissions@snsschool.edu.in</a></p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3>Visit Us</h3>
+                <p>SNS School Campus</p>
+                <p>Balotra Road, Near City Hospital</p>
+                <p>Balotra, Rajasthan - 344022</p>
+            </div>
+        </div>
+
+        <div class="office-hours">
+            <h3>🕐 Office Hours</h3>
+            <p class="office-hours-subtitle">Our administrative office is open to assist you</p>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <strong>Monday - Friday</strong>
+                    <span>9:00 AM - 5:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <strong>Saturday</strong>
+                    <span>9:00 AM - 2:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <strong>Sunday</strong>
+                    <span>Closed</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-section">
+            <h2 class="form-title">Send Us a Message</h2>
+            <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+
+            <form action="https://formspree.io/f/xblzaqjr" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="admission">Admission Inquiry</option>
+                        <option value="general">General Information</option>
+                        <option value="academics">Academics</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+        <div class="map-section">
+            <h2 class="section-title">Find Us on Map</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <p>SNS School, Balotra, Rajasthan</p>
+                    <a href="https://maps.google.com/?q=Balotra+Rajasthan" target="_blank" class="map-btn">
+                        <i class="fa-solid fa-location-arrow"></i>
+                        Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </main>
+</body>
+</html>
