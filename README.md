@@ -1,3 +1,5 @@
+https://kpatelboka646-prog.github.io/school-live.github.io/
+
 # SNS School Balotra - Official Website
 
 A modern, mobile-first website featuring **Poppins Typography** and **stretchable gum-like menu animation**.
@@ -70,5 +72,6 @@ Blog: https://ibbchoudhary.blogspot.com
 
 ## 📄 License
 © 2025 SNS School Balotra
+
 
 **Version**: 1.0.0 | **Status**: Production Ready ✅
